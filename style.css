@@ -1,4 +1,17 @@
-.container{
-    border: 3px solid black;
-    text-align: center;
+body {
+  font-family: Verdana, Geneva, Arial, sans-serif;
+}
+
+.container {
+  border: 3px solid black;
+  text-align: center;
+  width: 30%;
+  background-color: #e8f5ff;
+}
+
+.input_box {
+  width: 50%;
+  border-radius: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
