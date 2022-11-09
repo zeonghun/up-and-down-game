@@ -4,4 +4,7 @@
 
 ● 데모 : https://zeonghun-updowngame.netlify.app/
 
+# 기능
+● 게임
+
 ● 사용 기술 : HTML, CSS, Javascript
