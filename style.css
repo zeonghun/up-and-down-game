@@ -6,12 +6,26 @@ body {
   border: 3px solid black;
   text-align: center;
   width: 30%;
-  background-color: #e8f5ff;
+  background-color: #f0ffff;
 }
 
 .input_box {
   width: 50%;
   border-radius: 24px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 10px;
+}
+
+.btn {
+  width: 70px;
+}
+
+@media screen and (max-width: 48rem) {
+  .container {
+    width: 70%;
+  }
+
+  .input_box {
+    width: 60%;
+  }
 }

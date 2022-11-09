@@ -1,13 +1,3 @@
-// 랜덤번호 지정
-// 유저가 번호를 입력하고 go 버튼을 누름
-// 유저가 랜덤번호를 맞추면 '맞추셨습니다!!!' 출력
-// 랜덤번호 > 유저번호: up 출력
-// 랜덤번호 < 유저번호: down 출력
-// reset 버튼을 누르면 게임 리셋
-// 5번의 기회를 모두 쓰면 게임 종료 (추측 불가, 버튼 disable)
-// 유저가 1~100 범위 밖의 숫자를 입력하면 알려줌 (기회 줄지 않음)
-// 유저가 이미 입력한 숫자를 다시 입력하면 알려줌 (기회 줄지 않음)
-
 let computerNum = 0;
 let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
@@ -45,19 +35,23 @@ function play() {
   chance--;
   chanceArea.textContent = `남은 기회: ${chance}번`;
   if (userValue < computerNum) {
-    resultArea.textContent = "Up!!!";
+    resultArea.textContent = "Up!";
   } else if (userValue > computerNum) {
-    resultArea.textContent = "Down!!!";
+    resultArea.textContent = "Down!";
   } else {
-    resultArea.textContent = "맞추셨습니다!!!";
+    resultArea.textContent = "정답입니다!";
     gameOver = true;
   }
 
   history.push(userValue);
 
-  if (chance == 0) {
+  if (chance == 0 && userValue != computerNum) {
+    resultArea.textContent = `정답은 ${computerNum} 입니다!`;
+    gameOver = true;
+  } else if (chance == 0) {
     gameOver = true;
   }
+
   if (gameOver == true) {
     playButton.disabled = true;
   }
@@ -66,7 +60,7 @@ function play() {
 function reset() {
   userInput.value = "";
   pickRandomNum();
-  resultArea.textContent = "1~100 숫자를 맞춰보세요!";
+  resultArea.textContent = "숫자를 맞춰보세요!";
   gameOver = false;
   playButton.disabled = false;
   chance = 5;
